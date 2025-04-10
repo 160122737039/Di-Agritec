@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dirisinapu agritec solutions OPC private Ltd</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="home.js" defer></script>
+</head>
+
+<body>
+    <!-- Inside <nav class="navbar"> -->
+    <nav class="navbar">
+        <div class="logo-and-toggle">
+            <div class="logo">
+                <a href="/" class="home-icon" title="Home">
+                    <img src="http://dirisinapuagritec.com/agrihome/wp-content/uploads/2021/08/logo.jpg"
+                        alt="Company Logo">
+                </a>
+                <div class="company-name">
+                    Dirisinapu Agritec Solutions<br>| OPC Private Ltd
+                </div>
+            </div>
+
+            <button class="menu-toggle">&#9776;</button> <!-- Hamburger menu icon -->
+        </div>
+
+        <input type="text" placeholder="Search..." class="search-bar mobile-search">
+
+        <div class="nav-options">
+            <button class="filter-btn">Filter</button>
+            <button class="track-btn">📍 Track</button>
+            <button class="cart-btn1">
+                🛒 Cart <span id="cart-count" class="cart-counter" style="display: none;">0</span>
+            </button>
+            <button class="phone-btn">📞 Contact</button>
+            <button class="notify-btn">🔔 Notifications</button>
+        </div>
+    </nav>
+
+    <section class="welcome-section">
+        <div class="welcome-text">
+            <h1>Welcome to Dirisinapu agritec solutions OPC private Ltd</h1>
+            <p>Your trusted online shopping platform for modern irrigation solutions, providing innovative tools to
+                enhance agricultural efficiency and sustainability.</p>
+            <div class="offers-banner">🔥 Special Offer: Up to 30% off on selected irrigation systems! Limited time
+                only! 🔥</div>
+        </div>
+    </section>
+
+    <section class="products">
+        <h2>🌿 Products Offered 🌿</h2>
+        <div class="product-grid">
+            {{#each products}}
+            <div class="product">
+                <a href="/product/{{this._id}}">
+                    <a href="/related/{{this._id}}" data-id="{{this._id}}">
+                        <img src="{{this.imageUrl}}" alt="{{this.name}}">
+                        <p>{{this.name}}</p>
+                    </a>
+
+                    <p>{{this.name}}</p>
+                </a>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Related Products</title>
+    <link rel="stylesheet" href="/PageForBuy.css">
+    <script src="/PageForBuy.js" defer></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-and-toggle">
+            <div class="logo">
+                <a href="/" class="home-icon" title="Home">
+                    <img src="http://dirisinapuagritec.com/agrihome/wp-content/uploads/2021/08/logo.jpg"
+                        alt="Company Logo">
+                </a>
+                <div class="company-name">
+                    Dirisinapu Agritec Solutions<br>| OPC Private Ltd
+                </div>
+            </div>
+            <button class="menu-toggle">&#9776;</button> <!-- Hamburger menu icon -->
+        </div>
+
+        <input type="text" placeholder="Search..." class="search-bar mobile-search">
+
+        <div class="nav-options">
+            <button class="filter-btn">Filter</button>
+            <button class="track-btn">📍 Track</button>
+            <button class="cart-btn1">
+                🛒 Cart <span id="cart-count" class="cart-counter" style="display: none;">0</span>
+            </button>
+            <button class="phone-btn">📞 Contact</button>
+            <button class="notify-btn">🔔 Notifications</button>
+        </div>
+    </nav>
+    <!-- Main Layout -->
+    <div class="container">
+        <div class="mobile-sidebar-toggle" onclick="toggleSidebar()">&#94;</div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <h3>All Products</h3>
+            <ul>
+                {{#each allProducts}}
+                <li><a href="/buyProducts/{{this._id}}">{{this.name}}</a></li>
+                {{/each}}
+            </ul>
+        </aside>
+
+
+        <!-- Content Section -->
+        <main class="content">
+            <!-- Related Products Section -->
+            <section class="related-products">
+                <h2>🌿 Grab Your Favorites Before They’re Gone!🌿</h2>
+                <div class="product-grid">
+                    {{#each relatedProducts}}
+                    <div class="product" data-id="{{this._id}}">
+                        <img src="{{this.imageUrl}}" alt="{{this.name}}">
+                        <p>{{this.name}}</p>
+                        <p>Rs. {{this.Price}}</p>
+                        <div class="product-buttons">
+                            <button class="buy-btn">Buy</button>
+                            <button class="cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </section>
+
+        </main>
+    </div>
+    <!-- Cart Details Popup -->
+    <!-- Phone Input Popup -->
+    <div id="phonePopup" class="popup-overlay">
+        <div class="popup-content">
+            <h2>Enter Phone Number</h2>
+            <input type="tel" id="phoneInput" placeholder="Phone Number" required>
+            <button id="phoneSubmit">Submit</button>
+        </div>
+    </div>
+
+    <!-- Cart Details Popup -->
+    <div id="cartPopup" class="popup-overlay">
+        <div class="popup-content">
+            <h2>Add Delivery Details</h2>
+            <form id="cartDetailsForm">
+                <input type="text" id="address1" name="address1" placeholder="Address Line 1" required>
+                <input type="text" id="address2" name="address2" placeholder="Address Line 2">
+                <input type="text" id="pincode" name="pincode" placeholder="Pincode" required>
+                <button type="submit">Save & Add to Cart</button>
+                <button type="button" id="cancelButton">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

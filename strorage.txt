@@ -1,0 +1,12 @@
+manohargodugu123
+rl3TYkFdQGDFe0Qb
+mongodb+srv://manohargodugu123:rl3TYkFdQGDFe0Qb@irrigation.dcfoluk.mongodb.net/
+
+
+echo "# Di-Agritec" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/160122737039/Di-Agritec.git
+git push -u origin main
